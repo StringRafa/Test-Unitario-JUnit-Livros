@@ -3,7 +3,7 @@ package application;
 public class PilhaTest {
 
 	public boolean testRetiraUltimoLivro() {
-		Pilha pilha = new Pilha();
+		Pilha pilha = new Pilha(new FakePilhaDAO());
 		Livro livro = new Livro("A Fortaleza");
 		pilha.push(livro);
 
@@ -19,7 +19,7 @@ public class PilhaTest {
 	}
 
 	public boolean testLimiteAdicionarLivro() {
-		Pilha pilha = new Pilha();
+		Pilha pilha = new Pilha(new FakePilhaDAO());
 		Livro livro1 = new Livro("A Fortaleza");
 		Livro livro2 = new Livro("A Emboscada");
 		Livro livro3 = new Livro("O Palhaço");
@@ -40,7 +40,7 @@ public class PilhaTest {
 	}
 
 	public boolean testLivroComAouO() {
-		Pilha pilha = new Pilha();
+		Pilha pilha = new Pilha(new FakePilhaDAO());
 		Livro livro1 = new Livro("A Fortaleza");
 		pilha.push(livro1);
 		Livro livro2 = new Livro("Homem");

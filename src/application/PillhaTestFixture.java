@@ -16,7 +16,7 @@ public class PillhaTestFixture {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		pilha = new Pilha();
+		pilha = new Pilha(new FakePilhaDAO());
 		System.out.println("Executou o @BeforeClass");
 	}
 

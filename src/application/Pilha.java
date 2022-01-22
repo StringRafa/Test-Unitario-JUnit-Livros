@@ -8,6 +8,12 @@ public class Pilha {
 
 	ArrayList<Livro> pilha = new ArrayList<Livro>();
 
+	private IPilhaDAO pilhaDAO;
+	
+	public Pilha(IPilhaDAO pilhaDAO) {
+		this.pilhaDAO = pilhaDAO;
+	}
+
 	public void push(Livro livro) {
 		if (pilha.size() >= limite) {
 			throw new ArrayStoreException();
@@ -17,6 +23,7 @@ public class Pilha {
 		}
 
 		pilha.add(livro);
+		pilhaDAO.save(this);
 	}
 
 	public Livro pop() {
